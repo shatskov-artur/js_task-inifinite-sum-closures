@@ -15,21 +15,9 @@ function makeInfinityAdder() {
       return result;
     }
 
-    return (b) => {
-      if (b === undefined) {
-        total += a;
+    total += a;
 
-        const result = total;
-
-        total = 0;
-
-        return result;
-      } else {
-        total += a + b;
-
-        return sum;
-      }
-    };
+    return sum;
   };
 
   return sum;
