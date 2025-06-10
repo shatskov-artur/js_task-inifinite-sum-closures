@@ -19,7 +19,11 @@ function makeInfinityAdder() {
       if (b === undefined) {
         total += a;
 
-        return total;
+        const result = total;
+
+        total = 0;
+
+        return result;
       } else {
         total += a + b;
 
