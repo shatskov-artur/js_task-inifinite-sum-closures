@@ -3,8 +3,32 @@
 /***
  * @return {function}
  */
+
 function makeInfinityAdder() {
-  // write code here
+  let total = 0;
+  const sum = (a) => {
+    if (a === undefined) {
+      const result = total;
+
+      total = 0;
+
+      return result;
+    }
+
+    return (b) => {
+      if (b === undefined) {
+        total += a;
+
+        return total;
+      } else {
+        total += a + b;
+
+        return sum;
+      }
+    };
+  };
+
+  return sum;
 }
 
 module.exports = makeInfinityAdder;
